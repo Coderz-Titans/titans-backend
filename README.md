@@ -1,6 +1,6 @@
 # TITANS-FRONTEND
 
-## Group Members :
+## Group Members : 👥
 - Abdallah Alabed.
 - Abdullah Alabbadi.
 - Ayyoub Al Keyyam.
@@ -28,7 +28,7 @@ It guides people to different types of food recipes.
   
 A website that contains a variety of sections for today’s news, and you can easily find out the topics you’re looking for and interact with it. 
   
-**2- What problem or pain point does it solve?**
+**2- What problem or pain point does it solve?** :pushpin:
   
 Keep you updated with the latest news.
 

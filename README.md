@@ -9,8 +9,7 @@
 - Sanabel Abu Ezbead.
 -------------------------------------------------------------------------------------------------------------------
 
-##1- Dish a Day!
-
+## 1- Dish a Day!
 
 **1- summary of the idea.** :pushpin:
 
@@ -23,7 +22,7 @@ It guides people to different types of food recipes.
 
 -------------------------------------------------------------------------------------------------------------------
 
-##2- Daily-Dose News**
+## 2- Daily-Dose News
 
 **1- summary of the idea.** :pushpin:
   

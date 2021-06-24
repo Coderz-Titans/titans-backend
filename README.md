@@ -1,6 +1,6 @@
 # titans-frontend
 
-**Group Members :**
+## Group Members :
 - Abdallah Alabed.
 - Abdullah Alabbadi.
 - Ayyoub Al Keyyam.
@@ -9,7 +9,7 @@
 - Sanabel Abu Ezbead.
 -------------------------------------------------------------------------------------------------------------------
 
-**1- Dish a Day!**
+##1- Dish a Day!
 
 
 **1- summary of the idea.** :pushpin:
@@ -23,9 +23,8 @@ It guides people to different types of food recipes.
 
 -------------------------------------------------------------------------------------------------------------------
 
-**2- Daily-Dose News**
+##2- Daily-Dose News**
 
-<bt>
 **1- summary of the idea.** :pushpin:
   
 A website that contains a variety of sections for today’s news, and you can easily find out the topics you’re looking for and interact with it. 

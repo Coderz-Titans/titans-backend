@@ -1,4 +1,4 @@
-# titans-frontend
+# TITANS-FRONTEND
 
 ## Group Members :
 - Abdallah Alabed.
@@ -32,6 +32,3 @@ A website that contains a variety of sections for today’s news, and you can ea
   
 Keep you updated with the latest news.
 
-**3- What is the minimum required for you to present on your demo day?** :pushpin:
-  
-presenting our work-flow and aims in an understandable way.

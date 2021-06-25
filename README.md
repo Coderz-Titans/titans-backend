@@ -19,15 +19,4 @@ A website that contains a variety categories of food recipes which provide you w
 
 It guides people to different types of food recipes.
 
--------------------------------------------------------------------------------------------------------------------
-
-## 2- Daily-Dose News
-
-**1- summary of the idea.** :pushpin:
-  
-A website that contains a variety of sections for today’s news, and you can easily find out the topics you’re looking for and interact with it. 
-  
-**2- What problem or pain point does it solve?** :pushpin:
-  
-Keep you updated with the latest news.
 

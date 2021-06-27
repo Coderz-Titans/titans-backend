@@ -18,8 +18,8 @@ const userModel = mongoose.model("users", userSchema);
 const seedUserData = () => {
   const newUser = new userModel({
     email: "ayoub.alqeam@gmail.com",
-    name: "Ayyoub",
     page: {
+      name: "Ayyoub",
       viewsOfPage: 1,
       pageName: 'Ayooob',
       coverImg: "asmkdnjlhskjbakdbjkasbd",

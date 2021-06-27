@@ -7,18 +7,19 @@ const mongoose = require("mongoose");
 function newUser(email) {
   const user = new userModel({
     email: email,
-    page: [{
-      name: email,
-      viewsOfPage: 0,
-      pageName: email,
-      coverImg: "",
-      profileImg: "",
-      info: "",
-      followersData: [],
-      recipes: [],
-    }],
-  }
-  );
+    page: [
+      {
+        name: email,
+        viewsOfPage: 0,
+        pageName: email,
+        coverImg: "",
+        profileImg: "",
+        info: "",
+        followersData: [],
+        recipes: [],
+      },
+    ],
+  });
   console.log(user);
   user.save();
   return user;
@@ -32,9 +33,7 @@ function addUser(req, res) {
     if (err) {
       console.log("btata");
       res.send(err);
-    }
-    else {
-
+    } else {
       if (userData.length === 0) {
         console.log("bandora");
         console.log(email);
@@ -44,11 +43,8 @@ function addUser(req, res) {
         console.log("khyar");
         res.json(userData);
       }
-
-
     }
-  })
-
+  });
 }
 
 //////////////////////////////////////////////////////////////////////////////////

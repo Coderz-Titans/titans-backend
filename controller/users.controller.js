@@ -3,24 +3,12 @@
 const { userModel } = require("../models/users.model");
 const mongoose = require("mongoose");
 
-// const getUser = (request, response) => {
-//   const { email } = request.query;
-
-//   userModel.find({ email: email }, (error, user) => {
-//     if (error) {
-//       response.send(error);
-//     } else {
-//       response.json(user);
-//     }
-//   });
-// };
-
 //////////////////////////////////////////////////////////////////////////////////
 function newUser(email) {
   const user = new userModel({
     email: email,
-    name: email,
     page: [{
+      name: email,
       viewsOfPage: 0,
       pageName: email,
       coverImg: "",
@@ -29,7 +17,6 @@ function newUser(email) {
       followersData: [],
       recipes: [],
     }],
-
   }
   );
   console.log(user);
@@ -63,4 +50,7 @@ function addUser(req, res) {
   })
 
 }
+
+//////////////////////////////////////////////////////////////////////////////////
+
 module.exports = addUser;

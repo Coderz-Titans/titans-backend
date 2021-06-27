@@ -7,7 +7,7 @@ const pagesSchema = require("./pages.model");
 const userSchema = new mongoose.Schema(
   {
     email: { type: String, unique: true, required: true },
-    name: { type: String },
+    
     page: [pagesSchema],
   },
   { timestamps: true }

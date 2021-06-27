@@ -10,12 +10,17 @@ const mongoose = require("mongoose");
 const { seedUserData } = require("./models/users.model");
 
 const addUser = require("./controller/users.controller");
+const updatepage = require("./controller/pages.controller");
+
 // seedUserData();
+//////////////////////////////////////////////////////////////////////////////////
+
 mongoose.connect(MONGODB_CLINTE, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
+//////////////////////////////////////////////////////////////////////////////////
 app.get("/",addUser)
-
-app.listen(6363);
+//////////////////////////////////////////////////////////////////////////////////
+app.put("/page/:page_idx",updatepage)
+app.listen(6524);

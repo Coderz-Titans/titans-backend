@@ -2,9 +2,11 @@
 
 const mongoose = require("mongoose");
 const recipesSchema = require("./recipies.model");
+//////////////////////////////////////////////////////////////////////////////////
 
 const pagesSchema = new mongoose.Schema(
   {
+    name: { type: String },
     viewsOfPage: { type: Number, default: 0 },
     pageName: { unique: true, type: String },
     coverImg: { type: String },
@@ -16,4 +18,9 @@ const pagesSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
 module.exports = pagesSchema;

@@ -2,13 +2,12 @@
 
 const mongoose = require("mongoose");
 
-const commentsSchema = new mongoose.Schema({
-  commentId: { type: Number },
-  userId: { type: Number },
-  commentText: { type: String },
-  recipeId: { type: Number },
-  createDate: { type: String },
-  lastModifiedDate: { type: String },
-});
+const commentsSchema = new mongoose.Schema(
+  {
+    userIds: { type: [String] },
+    commentText: { type: [String] },
+  },
+  { timestamps: true }
+);
 
 module.exports = commentsSchema;

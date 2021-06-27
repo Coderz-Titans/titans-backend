@@ -2,13 +2,12 @@
 
 const mongoose = require("mongoose");
 
-const ratesSchema = new mongoose.Schema({
-  userId: { type: Number },
-  rate: { type: Number },
-  rateId: { type: Number, unique: true },
-  recipeId: { type: Number },
-  createDate: { type: String },
-  lastModifiedDate: { type: String },
-});
+const ratesSchema = new mongoose.Schema(
+  {
+    userIds: { type: [String] },
+    rate: { type: [Number] },
+  },
+  { timestamps: true }
+);
 
 module.exports = ratesSchema;

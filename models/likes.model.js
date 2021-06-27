@@ -2,11 +2,11 @@
 
 const mongoose = require("mongoose");
 
-const likesSchema = new mongoose.Schema({
-  userId: { type: Number },
-  recipeId: { type: Number },
-  createDate: { type: String },
-  lastModifiedDate: { type: String },
-});
+const likesSchema = new mongoose.Schema(
+  {
+    userIds: { type: [String] },
+  },
+  { timestamps: true }
+);
 
 module.exports = likesSchema;

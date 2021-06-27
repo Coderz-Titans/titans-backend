@@ -2,17 +2,21 @@
 
 const mongoose = require("mongoose");
 
-const recipesSchema = new mongoose.Schema({
-  userId: { type: Number },
-  recipeId: { type: Number, unique: true },
-  commentId: { type: String },
-  likes: { type: Number },
-  rateId: { type: Number },
-  dishImg: { type: String },
-  dishTitle: { type: String },
-  dishInfo: { type: String },
-  createDate: { type: String },
-  lastModifiedDate: { type: String },
-});
+const ratesSchema = require("./rates.model");
+const commentsSchema = require("./comments.model");
+const likesSchema = require("./likes.model");
+
+const recipesSchema = new mongoose.Schema(
+  {
+    recipeId: { type: Number, unique: true },
+    dishImg: { type: String },
+    dishTitle: { type: String },
+    dishInfo: { type: String },
+    likes: [likesSchema],
+    rates: [ratesSchema],
+    comments: [commentsSchema],
+  },
+  { timestamps: true }
+);
 
 module.exports = recipesSchema;

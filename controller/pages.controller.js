@@ -34,7 +34,6 @@ const updatepage = (request, response) => {
         followersData: followersData,
         recipes: [],
       });
-      console.log(pageData, "XxXXXXXXXXXXX");
       pageData.save();
       response.send(pageData);
     }

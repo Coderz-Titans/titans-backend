@@ -15,6 +15,7 @@ const updatepage = require("./controller/pages.controller");
 const {
   getRecipes,
   createRecipes,
+  deleteRecipes
 } = require("./controller/recipies.controller");
 
 // seedUserData();
@@ -28,7 +29,9 @@ mongoose.connect(MONGODB_CLINTE, {
 app.get("/", addUser);
 // Recipes
 app.get("/recipes", getRecipes);
-app.post("/recipes", createRecipes);
+app.post("/recipe", createRecipes);
+app.delete("/recipe/:recipes_id", deleteRecipes);
 //////////////////////////////////////////////////////////////////////////////////
 app.put("/page", updatepage);
+
 app.listen(6524);

@@ -29,7 +29,7 @@ const createRecipe = (request, response) => {
         dishInfo: dishInfo,
         likes: [],
         rates: [],
-        comments: []
+        comments: [],
       });
       data.save();
       response.json(data);
@@ -37,6 +37,7 @@ const createRecipe = (request, response) => {
   });
 };
 //////////////////////////////////////////////////////////////////////////////////
+// Delete Recipes
 const deleteRecipe = (request, response) => {
   const recipesId = request.params.recipes_id;
   const { email } = request.query;
@@ -44,57 +45,55 @@ const deleteRecipe = (request, response) => {
     if (error) {
       response.send(error);
     } else {
-      // userData.page[0].recipes.forEach((item, index) => {
-      //   if (recipesId === item._id.toString()) {
-      //     userData.page[0].recipes.splice(index, 1);
-      //     userData.save();
-      //     response.send(userData)
-      //      console.log("index :",index);
-      //      break;
-      //   })
       for (let index = 0; index < userData.page[0].recipes.length; index++) {
-        if (recipesId === item._id.toString()) {
+        if (recipesId === userData.page[0].recipes[index]._id.toString()) {
           userData.page[0].recipes.splice(index, 1);
           userData.save();
-          response.send(userData)
+          response.send(userData);
           console.log("index :", index);
           break;
         }
         console.log(index);
       }
-}
+    }
   });
 };
 //////////////////////////////////////////////////////////////////////////////////
+// Update Recipes
 const updateRecipe = (request, response) => {
-  const bookIndex = request.params.recipes_idx;
-  // const { userEmail, bookName } = request.body;
-  const { userEmail, bookName, bookDescription, bookState } = request.body;
-  userModel.findOne({ email: userEmail }, (error, userData) => {
+  const recipesId = request.params.recipes_id;
+  const { email, dishImg, dishTitle, dishInfo } = request.body;
+
+  userModel.findOne({ email: email }, (error, userData) => {
     if (error) {
-      response.send(error)
+      response.send(error);
     } else {
-      userData.page[0].recipes.map((item, index) => {
-        if (recipesId === item._id.toString()) {
-          userData.books.splice(index, 1, {
-            name: bookName,
-            description: bookDescription,
-            state: bookState,
+      for (let index = 0; index < userData.page[0].recipes.length; index++) {
+        if (recipesId === userData.page[0].recipes[index]._id.toString()) {
+          userData.page[0].recipes.splice(index, 1, {
+            _id: userData.page[0].recipes[index]._id,
+            dishImg: dishImg,
+            dishTitle: dishTitle,
+            dishInfo: dishInfo,
+            likes: userData.page[0].recipes[index].likes,
+            rates: userData.page[0].recipes[index].rates,
+            comments: userData.page[0].recipes[index].comments,
           });
           userData.save();
-          response.send(userData)
+          response.send(userData);
+          console.log("index :", index);
+          break;
         }
-      })
-
+        console.log(index);
+      }
     }
   });
-}
+};
 //////////////////////////////////////////////////////////////////////////////////
 
 module.exports = {
   getRecipes,
   createRecipe,
   deleteRecipe,
+  updateRecipe,
 };
-
-

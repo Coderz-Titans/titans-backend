@@ -12,7 +12,8 @@ const pagesSchema = new mongoose.Schema(
     coverImg: { type: String },
     profileImg: { type: String },
     info: { type: String },
-    followersData: { type: [Number] },
+    followersData: { type: [String] },
+    following: { type: [String] },
     recipes: [recipesSchema],
   },
   { timestamps: true }

@@ -11,31 +11,31 @@ const updatepage = (request, response) => {
   const {
     email,
     name,
-    viewsOfPage,
     pageName,
     coverImg,
     profileImg,
     info,
-    followersData,
   } = request.body;
-  userModel.findOne({ email: email }, (error, pageData) => {
+  userModel.findOne({ email: email }, (error, userData) => {
+    console.log(userData);
     if (error) {
-      console.log(error.message);
       response.send(error);
     } else {
       console.log(request.body);
-      pageData.page.splice(0, 1, {
+      userData.page.splice(0, 1, {
+        _id: userData.page[0]._id,
         name: name,
-        viewsOfPage: viewsOfPage,
         pageName: pageName,
         coverImg: coverImg,
         profileImg: profileImg,
         info: info,
-        followersData: followersData,
-        recipes: [],
+        recipes: userData.page[0].recipes,
+        viewsOfPage: userData.page[0].viewsOfPage,
+        followersData: userData.page[0].followersData,
+        following: userData.page[0].following,
       });
-      pageData.save();
-      response.send(pageData);
+      userData.save();
+      response.send(userData);
     }
   });
 };

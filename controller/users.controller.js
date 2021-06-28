@@ -9,13 +9,14 @@ function newUser(email) {
     email: email,
     page: [
       {
-        name: email,
+        name: email, //defulte Name
         viewsOfPage: 0,
         pageName: email,
         coverImg: "",
         profileImg: "",
         info: "",
         followersData: [],
+        following: [],
         recipes: [],
       },
     ],
@@ -31,7 +32,7 @@ function addUser(req, res) {
 
   userModel.find({ email: email }, (err, userData) => {
     if (err) {
-      console.log("btata");
+      console.log("btata"); // console Delete
       res.send(err);
     } else {
       if (userData.length === 0) {

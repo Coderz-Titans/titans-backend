@@ -12,6 +12,11 @@ const { seedUserData } = require("./models/users.model");
 const addUser = require("./controller/users.controller");
 const updatepage = require("./controller/pages.controller");
 
+const {
+  getRecipes,
+  createRecipes,
+} = require("./controller/recipies.controller");
+
 // seedUserData();
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -21,6 +26,9 @@ mongoose.connect(MONGODB_CLINTE, {
 });
 //////////////////////////////////////////////////////////////////////////////////
 app.get("/", addUser);
+// Recipes
+app.get("/recipes", getRecipes);
+app.post("/recipes", createRecipes);
 //////////////////////////////////////////////////////////////////////////////////
 app.put("/page", updatepage);
 app.listen(6524);

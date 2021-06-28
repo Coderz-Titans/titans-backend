@@ -24,7 +24,7 @@ const {
   updateComment,
   deleteComment,
 } = require("./controller/comments.controller");
-const { createLike } = require("./controller/likes.controller");
+const { createLike, deleteLike } = require("./controller/likes.controller");
 // seedUserData();
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -45,6 +45,8 @@ app.put("/comment/:comment_id", updateComment);
 app.delete("/comment/:comment_id", deleteComment);
 /////////////////////////////////////////////////////////////////
 app.post("/like/:recipes_id", createLike);
+app.delete("/like/:like_id", deleteLike);
+
 
 ////////////////////////////////
 app.put("/page", updatepage);

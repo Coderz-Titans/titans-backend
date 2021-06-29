@@ -2,7 +2,7 @@
 
 const mongoose = require("mongoose");
 
-const likesSchema = new mongoose.Schema(
+const followersSchema = new mongoose.Schema(
   {
     userIds: { type: String },
     usersImg: { type: String },
@@ -11,4 +11,4 @@ const likesSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = likesSchema;
+module.exports = followersSchema;

@@ -7,15 +7,49 @@ require("dotenv").config();
 app.use(express.json());
 const MONGODB_CLINTE = process.env.MONGODB_CLINTE;
 const mongoose = require("mongoose");
-const { seedUserData } = require("./models/users.model");
+// const { seedUserData } = require("./models/users.model");
+
+const addUser = require("./controller/users.controller");
+const updatepage = require("./controller/pages.controller");
+
+const {
+  getRecipes,
+  createRecipe,
+  deleteRecipe,
+  updateRecipe,
+} = require("./controller/recipies.controller");
+
+const { handelFollow } = require("./controller/follow.controller");
+const {
+  createComment,
+  updateComment,
+  deleteComment,
+} = require("./controller/comments.controller");
+const { createLike, deleteLike } = require("./controller/likes.controller");
 // seedUserData();
+//////////////////////////////////////////////////////////////////////////////////
+
 mongoose.connect(MONGODB_CLINTE, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+//////////////////////////////////////////////////////////////////////////////////
+app.post("/user", addUser);
+// Recipes
+app.get("/recipes", getRecipes);
+app.post("/recipe", createRecipe);
+app.delete("/recipe/:recipes_id", deleteRecipe);
+app.put("/recipe/:recipes_id", updateRecipe);
+//////////////////////////////////////////////////////////////////////////////////
+app.post("/comment/:recipes_id", createComment);
+app.put("/comment/:comment_id", updateComment);
+app.delete("/comment/:comment_id", deleteComment);
+/////////////////////////////////////////////////////////////////
+app.post("/like/:recipes_id", createLike);
+app.delete("/like/:like_id", deleteLike);
+////////////////////////////////
+app.put("/follow", handelFollow);
 
-app.get("/", function (req, res) {
-  res.send("Hello World");
-});
+app.put("/page", updatepage);
 
-app.listen(6363);
+app.listen(6524);

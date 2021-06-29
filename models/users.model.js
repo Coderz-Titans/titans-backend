@@ -7,7 +7,7 @@ const pagesSchema = require("./pages.model");
 const userSchema = new mongoose.Schema(
   {
     email: { type: String, unique: true, required: true },
-    name: { type: String },
+    
     page: [pagesSchema],
   },
   { timestamps: true }
@@ -18,8 +18,8 @@ const userModel = mongoose.model("users", userSchema);
 const seedUserData = () => {
   const newUser = new userModel({
     email: "ayoub.alqeam@gmail.com",
-    name: "Ayyoub",
     page: {
+      name: "Ayyoub",
       viewsOfPage: 1,
       pageName: 'Ayooob',
       coverImg: "asmkdnjlhskjbakdbjkasbd",

@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 require("dotenv").config();
+const PORT = process.env.PORT;
 // const axios = require('axios');
 app.use(express.json());
 const MONGODB_CLINTE = process.env.MONGODB_CLINTE;
@@ -52,4 +53,4 @@ app.put("/follow", handelFollow);
 
 app.put("/page", updatepage);
 
-app.listen(6524);
+app.listen(PORT);

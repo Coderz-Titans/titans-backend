@@ -14,6 +14,9 @@ const recipesSchema = new mongoose.Schema(
     likes: [likesSchema],
     rates: [ratesSchema],
     comments: [commentsSchema],
+    name: { type: String },
+    profileImg: { type: String },
+    autherEmail: { type: String },
   },
   { timestamps: true }
 );

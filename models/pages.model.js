@@ -2,6 +2,10 @@
 
 const mongoose = require("mongoose");
 const recipesSchema = require("./recipies.model");
+const followingSchema = require("./following.model");
+const followersSchema = require("./followers.model");
+
+
 //////////////////////////////////////////////////////////////////////////////////
 
 const pagesSchema = new mongoose.Schema(
@@ -12,8 +16,8 @@ const pagesSchema = new mongoose.Schema(
     coverImg: { type: String },
     profileImg: { type: String },
     info: { type: String },
-    followersData: { type: [String] },
-    following: { type: [String] },
+    followersData: [followersSchema],
+    following: [followingSchema],
     recipes: [recipesSchema],
   },
   { timestamps: true }

@@ -19,6 +19,7 @@ const {
   updateRecipe,
 } = require("./controller/recipies.controller");
 
+const { handelFollow } = require("./controller/follow.controller");
 const {
   createComment,
   updateComment,
@@ -46,9 +47,9 @@ app.delete("/comment/:comment_id", deleteComment);
 /////////////////////////////////////////////////////////////////
 app.post("/like/:recipes_id", createLike);
 app.delete("/like/:like_id", deleteLike);
-
-
 ////////////////////////////////
+app.put("/follow", handelFollow);
+
 app.put("/page", updatepage);
 
 app.listen(6524);

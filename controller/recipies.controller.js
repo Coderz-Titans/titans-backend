@@ -30,6 +30,9 @@ const createRecipe = (request, response) => {
         likes: [],
         rates: [],
         comments: [],
+        name: data.page[0].name,
+        profileImg: data.page[0].profileImg,
+        autherEmail: data.email,
       });
       data.save();
       response.json(data);
@@ -78,6 +81,9 @@ const updateRecipe = (request, response) => {
             likes: userData.page[0].recipes[index].likes,
             rates: userData.page[0].recipes[index].rates,
             comments: userData.page[0].recipes[index].comments,
+            name: userData.page[0].name,
+            profileImg: userData.page[0].profileImg,
+            autherEmail: userData.email,
           });
           userData.save();
           response.send(userData);

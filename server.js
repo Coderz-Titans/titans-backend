@@ -53,4 +53,8 @@ app.put("/follow", handelFollow);
 
 app.put("/page", updatepage);
 
+app.get("/", function (req, res) {
+  res.send("Welcome to the server of Flavors 101");
+});
+
 app.listen(PORT);

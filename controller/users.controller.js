@@ -10,7 +10,8 @@ const getPage = (request, response) => {
     if (error) {
       response.send(error);
     } else {
-      response.json(data[0].page[0]);
+      data[0].page[0].viewsOfPage++;
+      data.save().then(response.json(data[0].page[0]));
     }
   });
 };
@@ -24,9 +25,11 @@ function newUser(email) {
         name: email, //defulte Name
         viewsOfPage: 0,
         pageName: email,
-        coverImg: "",
-        profileImg: "",
-        info: "",
+        coverImg:
+          "https://images.unsplash.com/photo-1619526881542-c81baff85fa4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+        profileImg:
+          "http://www.defineinternational.com/wp-content/uploads/2014/06/dummy-profile-300x300.png",
+        info: "Edit Your Page !!",
         followersData: [],
         following: [],
         recipes: [],

@@ -6,12 +6,16 @@ const mongoose = require("mongoose");
 const getPage = (request, response) => {
   const { email } = request.query;
 
-  userModel.find({ email: email }, (error, data) => {
+  userModel.findOne({ email: email }, (error, data) => {
     if (error) {
       response.send(error);
     } else {
-      data[0].page[0].viewsOfPage++;
-      data.save().then(response.json(data[0].page[0]));
+      data.page[0].viewsOfPage++;
+      console.log(data.page[0].viewsOfPage);
+      console.log("==============================");
+      console.log(data);
+      data.save();
+      response.json(data.page[0]);
     }
   });
 };

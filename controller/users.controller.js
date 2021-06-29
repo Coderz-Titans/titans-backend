@@ -61,7 +61,7 @@ function addUser(req, res) {
         res.json(user);
       } else {
         console.log("khyar");
-        res.json(userData);
+        res.json(userData[0]);
       }
     }
   });

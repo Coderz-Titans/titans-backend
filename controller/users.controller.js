@@ -3,6 +3,18 @@
 const { userModel } = require("../models/users.model");
 const mongoose = require("mongoose");
 
+const getPage = (request, response) => {
+  const { email } = request.query;
+
+  userModel.find({ email: email }, (error, data) => {
+    if (error) {
+      response.send(error);
+    } else {
+      response.json(data[0].page[0]);
+    }
+  });
+};
+//
 //////////////////////////////////////////////////////////////////////////////////
 function newUser(email) {
   const user = new userModel({
@@ -50,4 +62,4 @@ function addUser(req, res) {
 
 //////////////////////////////////////////////////////////////////////////////////
 
-module.exports = addUser;
+module.exports = { addUser, getPage };

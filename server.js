@@ -10,7 +10,7 @@ const MONGODB_CLINTE = process.env.MONGODB_CLINTE;
 const mongoose = require("mongoose");
 // const { seedUserData } = require("./models/users.model");
 
-const addUser = require("./controller/users.controller");
+const { addUser, getPage } = require("./controller/users.controller");
 const updatepage = require("./controller/pages.controller");
 
 const {
@@ -51,7 +51,9 @@ app.delete("/like/:like_id", deleteLike);
 ////////////////////////////////
 app.put("/follow", handelFollow);
 
+app.get("/page", getPage);
 app.put("/page", updatepage);
+
 
 app.get("/", function (req, res) {
   res.send("Welcome to the server of Flavors 101");

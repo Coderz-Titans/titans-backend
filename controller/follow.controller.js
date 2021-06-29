@@ -33,7 +33,7 @@ const handelFollow = (request, response) => {
             break;
           } else if (
             i === userData.page[0].following.length - 1 ||
-            userData.page[0].following.length === 0
+            userData.page[0].following.length === 0 //or !flag
           ) {
             userData.page[0].following.push({
               userIds: userIds,

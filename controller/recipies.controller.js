@@ -6,11 +6,11 @@ const { userModel } = require("../models/users.model");
 const getRecipes = (request, response) => {
   const { email } = request.query;
 
-  userModel.find({ email: email }, (error, data) => {
+  userModel.findOne({ email: email }, (error, data) => {
     if (error) {
       response.send(error);
     } else {
-      response.json(data[0].page[0].recipes);
+      response.json(data);
     }
   });
 };

@@ -36,7 +36,18 @@ function newUser(email) {
         info: "Edit Your Page !!",
         followersData: [],
         following: [],
-        recipes: [],
+        recipes: [
+          {
+            dishImg:
+              "https://images.unsplash.com/photo-1506159904226-d6cfd457c30c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80",
+            dishTitle: "Add Your Recipe",
+            dishInfo: "Recipe Info !!",
+            likes: [],
+            rates: [],
+            comments: [],
+            autherEmail: email,
+          },
+        ],
       },
     ],
   });
